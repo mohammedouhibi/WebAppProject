@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface AppUserRepository extends CrudRepository<Appusers, Long> {
+public interface AppUserRepository extends CrudRepository<Appusers, Long> { //repository for connecting Appusers class to appusers table on database
 
-    List<Appusers> findByUsername(String username);
+    List<Appusers> findByUsername(String username); //required method
 }

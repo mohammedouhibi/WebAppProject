@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Appusers {
+public class Appusers {   //Class linked to database table "appusers"
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;

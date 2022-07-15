@@ -23,7 +23,7 @@ public class SecurityConfiguration {
 
 
 
-    @Bean
+    @Bean //simple security filter chain for testing purposes
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
@@ -37,7 +37,7 @@ public class SecurityConfiguration {
     @Bean
     public PasswordEncoder encoder()
     {
-    return NoOpPasswordEncoder.getInstance();
+    return NoOpPasswordEncoder.getInstance();//no password encoder for testing purposes
     }
 
 }

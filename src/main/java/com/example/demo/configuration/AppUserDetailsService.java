@@ -20,11 +20,11 @@ public class AppUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
     {
-        List<Appusers> user = appUserRepository.findByUsername(username);
-        if(user.size()==0)
+        List<Appusers> user = appUserRepository.findByUsername(username); //searching for users by username
+        if(user.size()==0) // this value indicates whether the user exists or not
         {
-            throw new UsernameNotFoundException("could not find user "+username+".");
+            throw new UsernameNotFoundException("could not find user "+username+"."); //throwing exception if user does not exist
         }
-        return new AppUserDetails(user.get(0));
+        return new AppUserDetails(user.get(0)); //returning first user that matches the given username
     }
 }
