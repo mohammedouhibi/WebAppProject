@@ -27,4 +27,6 @@ public class AppUserDetailsService implements UserDetailsService {
         }
         return new AppUserDetails(user.get(0)); //returning first user that matches the given username
     }
+
+
 }
