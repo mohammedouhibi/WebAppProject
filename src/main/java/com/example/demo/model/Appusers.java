@@ -8,8 +8,8 @@ import javax.persistence.Id;
 @Entity
 public class Appusers {   //Class linked to database table "appusers"
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private int id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
     private String username;
     private String password;
     private String name;
@@ -20,11 +20,11 @@ public class Appusers {   //Class linked to database table "appusers"
     private String imgurl;
     private int enabled;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

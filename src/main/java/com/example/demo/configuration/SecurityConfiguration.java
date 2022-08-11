@@ -12,6 +12,7 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import javax.sql.DataSource;
 
@@ -25,10 +26,14 @@ public class SecurityConfiguration {
 
     @Bean //simple security filter chain for testing purposes
     protected SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/home").authenticated()
-                .and().formLogin();
+
+        http.csrf().disable()
+                .antMatcher("/*").authorizeRequests().anyRequest().authenticated()
+                .and().formLogin().loginProcessingUrl("/loginlogin").permitAll()
+
+        ;
+
+
         return http.build();
                 }
 
