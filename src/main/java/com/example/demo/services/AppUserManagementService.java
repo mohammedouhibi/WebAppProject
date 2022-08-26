@@ -81,7 +81,7 @@ public class AppUserManagementService {
         Iterable<Appusers> users = appUserRepository.findAll();
         List<Appusers> usersList = new ArrayList<Appusers>();
         users.forEach(usersList::add);
-        usersList.forEach(user-> user.setPassword(null)); //setting returned password to null for better security
+        usersList.forEach(user-> user.setPassword(null)); //setting returned password to null for security
         return usersList;
     }
 
